@@ -47,11 +47,6 @@ function generatePassword() {
     }
 
     return password;
-
-
-
-
-
 }
 
 function getPrompts() {
@@ -71,18 +66,18 @@ function getPrompts() {
         confirmLower = confirm("Do you want your password to contain lower case letters? Click Ok for Yes. Click Cancel for No.");
     }
 
-     // Else if for 4 negative options
+     // Else if for 4 negative options-prevents user from continuing thru any more prompts
      if (!confirmSpecial && !confirmNumber && !confirmUpper && !confirmLower) {
         choiceArr = alert("You must select at least one option in order to generate your password. Please try again by starting over. Click Generate Password button to begin again.");
 
     }
   
-    //4 Checking for 4 conditionals
+    //4 Checking for 4 conditionals and will generate password with all four conditionals
     else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
 
         choiceArr = specialArr.concat(numberArr, upperCaseArr, specialArr, lowerArr);
     }
-    //  Checking for 3 conditionals
+    //  Checking for 3 conditionals-password with 3 conditionals is output
     else if (confirmSpecial && confirmNumber && confirmUpper) {
         choiceArr = specialArr.concat(numberArr, upperCaseArr);
     }
@@ -95,7 +90,7 @@ function getPrompts() {
     else if (confirmNumber && confirmLower && confirmUpper) {
         choiceArr = numberArr.concat(lowerArr, upperCaseArr);
     }
-    // Checking for only 2 conditionals 
+    // Checking for only 2 conditionals - password is two conditionals only
     else if (confirmSpecial && confirmNumber) {
         choiceArr = specialArr.concat(numberArr);
 
@@ -114,7 +109,7 @@ function getPrompts() {
     } else if (confirmNumber && confirmUpper) {
         choiceArr = numberArr.concat(upperCaseArr);
     }
-    // Else if for 1 positive option
+    // Checking for 1 conditional - password will only have selected conditional
     else if (confirmSpecial) {
         choiceArr = specialArr;
     }
