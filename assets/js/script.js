@@ -66,22 +66,23 @@ function getPrompts() {
     }else  {
         
         confirmNumber = confirm("Do you want your password to contain numbers? Click Ok for Yes. Click Cancel for No.");
-        confirmSpecial = confirm("Do you want your password to contain characters? Click Ok for Yes. Click Cancel for No.");
-        confirmUpper = confirm("Do you want your password to contain letters? Click Ok for Yes. Click Cancel for No.");
-        confirmLower = confirm("Do you want your password to contain letters? Click Ok for Yes. Click Cancel for No.");
+        confirmSpecial = confirm("Do you want your password to contain special characters? Click Ok for Yes. Click Cancel for No.");
+        confirmUpper = confirm("Do you want your password to contain upper case letters? Click Ok for Yes. Click Cancel for No.");
+        confirmLower = confirm("Do you want your password to contain lower case letters? Click Ok for Yes. Click Cancel for No.");
     }
 
-    // Else if for 4 negative options
-    if (!confirmSpecial && !confirmNumber && !confirmUpper && !confirmLower) {
+     // Else if for 4 negative options
+     if (!confirmSpecial && !confirmNumber && !confirmUpper && !confirmLower) {
         choiceArr = alert("You must select at least one option in order to generate your password. Please try again by starting over. Click Generate Password button to begin again.");
 
     }
-    //4 confirmed options
+  
+    //4 Checking for 4 conditionals
     else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
 
         choiceArr = specialArr.concat(numberArr, upperCaseArr, specialArr, lowerArr);
     }
-    //  3 confirmed options
+    //  Checking for 3 conditionals
     else if (confirmSpecial && confirmNumber && confirmUpper) {
         choiceArr = specialArr.concat(numberArr, upperCaseArr);
     }
@@ -94,7 +95,7 @@ function getPrompts() {
     else if (confirmNumber && confirmLower && confirmUpper) {
         choiceArr = numberArr.concat(lowerArr, upperCaseArr);
     }
-    // 2 confirmed options 
+    // Checking for only 2 conditionals 
     else if (confirmSpecial && confirmNumber) {
         choiceArr = specialArr.concat(numberArr);
 
@@ -130,7 +131,20 @@ function getPrompts() {
     return password;
     }
 
- 
+ //optional shorter code that has some issues. 
+    // if (confirmLower) {
+    //     choiceArr = choiceArr.concat(lowerArr);
+    // }
+
+    // if (confirmUpper) {
+    //     choiceArr = choiceArr.concat(upperCaseArr);
+    // }
+    // if (confirmSpecial) {
+    //     choiceArr = choiceArr.concat(specialArr);
+    // }
+    // if (confirmNumber) {
+    //     choiceArr = choiceArr.concat(numberArr);
+    // }
 
 
 
